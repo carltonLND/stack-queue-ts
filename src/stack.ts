@@ -2,6 +2,7 @@ export interface Stack<T> {
   push: (...items: T[]) => void;
   pop: () => T | undefined;
   isEmpty: () => boolean;
+  peek: () => T;
 }
 
 export function createStack<T>(...stackFrom: T[]): Stack<T> {
@@ -13,5 +14,6 @@ export function createStack<T>(...stackFrom: T[]): Stack<T> {
     },
     pop: () => stackItems.pop(),
     isEmpty: () => stackItems.length === 0,
+    peek: () => stackItems[stackItems.length - 1],
   };
 }
