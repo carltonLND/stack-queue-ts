@@ -13,6 +13,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install modules
         run: yarn
+      - name: Check formatting with Prettier
+        run: yarn format:check
       - name: Check type compilation with TypeScript
         run: yarn type-check
       - name: Run tests with Jest
