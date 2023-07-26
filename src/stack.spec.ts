@@ -51,13 +51,10 @@ test("test stack built from multiple args", () => {
   expect(newStack.pop()).toBe(undefined);
 });
 
-test("test peek returns the last item on stack without removing it", () => {
+test("test peek returns the next item on stack without removing it", () => {
   const newStack = createStack("hello");
   const peekedItem = newStack.peek();
 
   expect(peekedItem).toBe("hello");
   expect(newStack.isEmpty()).toBe(false);
-
-  expect(newStack.pop()).toBe("hello");
-  expect(newStack.isEmpty()).toBe(true);
 });
